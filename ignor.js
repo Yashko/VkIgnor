@@ -2,11 +2,12 @@
 // @name         vk mute
 // @version      0.1
 // @author       Yashko
-// @include      http*://vk.com/im*
-// @include      http*://new.vk.com/im*
+// @include      http*://vk.com/*
+// @include      http*://new.vk.com/*
 // ==/UserScript==
 
-var MUTE = ['1', '2'];
+//скрывать сообщения от id1 и id2
+var MUTE = ['1','2'];
 
 (function() {
     'use strict';
@@ -17,6 +18,7 @@ var MUTE = ['1', '2'];
 })();
 
 function ignor() {
+    if (window.location.pathname != '/im') { return; }
     var messages = document.getElementsByClassName('im_in');
     for (var i = 0; i < messages.length; i++) {
         var el = messages[i];
