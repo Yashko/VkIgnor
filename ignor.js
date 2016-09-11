@@ -1,13 +1,11 @@
 // ==UserScript==
-// @name         vk mute
-// @version      0.1
+// @name         Vk Mute
+// @version      0.2
 // @author       Yashko
 // @include      http*://vk.com/*
-// @include      http*://new.vk.com/*
 // ==/UserScript==
 
-//скрывать сообщения от id1 и id2
-var MUTE = ['1','2'];
+var MUTE = ['144105306'];
 
 (function() {
     'use strict';
@@ -19,10 +17,10 @@ var MUTE = ['1','2'];
 
 function ignor() {
     if (window.location.pathname != '/im') { return; }
-    var messages = document.getElementsByClassName('im_in');
+    var messages = document.getElementsByClassName('im-mess-stack');
     for (var i = 0; i < messages.length; i++) {
         var el = messages[i];
-        if (MUTE.indexOf(el.getAttribute('data-from')) > -1) {
+        if (MUTE.indexOf(el.getAttribute('data-peer')) > -1) {
             el.parentNode.removeChild( el );
         }
     }
