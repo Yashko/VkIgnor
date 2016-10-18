@@ -5,7 +5,7 @@
 // @include      http*://vk.com/*
 // ==/UserScript==
 
-var MUTE = ['144105306'];
+var MUTE = ['12345'];
 
 (function() {
     'use strict';
